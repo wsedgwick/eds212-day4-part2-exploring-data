@@ -19,7 +19,7 @@ library(skimr)
 Check out your data a bit:
 
 ```{r}
-#| include: false
+
 
 # Tell me the column names
 names(penguins)
