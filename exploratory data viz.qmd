@@ -33,3 +33,42 @@ head(penguins)
 # Can you show me the last 6 lines?
 tail(penguins)
 ```
+
+```{r}
+skim(penguins)
+
+GGally::ggpairs(penguins)
+
+```
+
+## Jitterplot
+
+Flipper Length by Species
+
+```{r}
+ggplot(data = penguins, aes(x = species, y = flipper_length_mm)) +
+  geom_jitter(width = 0.2,
+              alpha = 0.8,
+              aes(color = species)) +
+  geom_boxplot(fill = NA,
+               width = 0.5) +
+  theme_light() +
+  scale_color_manual(values = c("darkorchid4", "cyan4", "goldenrod")) +
+  labs(x = "Penguin Species",
+       y = "Flipper Length (in mm)",
+       title = "Palmer Arc. Penguin Flippers")
+```
+
+```{r}
+ggplot(data = penguins, aes(x = bill_length_mm)) +
+  geom_histogram(aes(fill = species), color = "magenta") +
+facet_wrap(~species, ncol = 1)
+```
+
+```{r}
+ggplot(data = penguins, aes(x = island, y = flipper_length_mm)) +
+ geom_jitter(aes(color = species))
+
+flipper_mean <- mean(penguins$flipper_length_mm, na.rm = TRUE)
+flipper_mean
+```
