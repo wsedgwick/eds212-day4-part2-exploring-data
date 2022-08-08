@@ -32,6 +32,8 @@ head(penguins)
 
 # Can you show me the last 6 lines?
 tail(penguins)
+
+
 ```
 
 ```{r}
@@ -66,9 +68,52 @@ facet_wrap(~species, ncol = 1)
 ```
 
 ```{r}
-ggplot(data = penguins, aes(x = island, y = flipper_length_mm)) +
- geom_jitter(aes(color = species))
+
+species <- penguins$species
+
+adelie <- filter(penguins, species == 'adelie')
+
 
 flipper_mean <- mean(penguins$flipper_length_mm, na.rm = TRUE)
 flipper_mean
+
+ggplot(data = penguins, aes(x = island, y = flipper_length_mm)) +
+ geom_jitter(aes(color = species))
+
+ggplot(data = penguins, aes(x = body_mass_g)) +
+  geom_histogram()
+
+
 ```
+
+```{r}
+
+bear <- c(5, 8, 12)
+
+as.character(bear)
+
+bear
+
+as.numeric(bear)
+
+```
+
+
+```{r}
+
+r <- c(5, 2, 1, 8, 45)
+
+r
+
+is.na(r)
+
+is.numeric(r)
+
+# Changes in R Studio
+
+
+```
+
+
+
+
