@@ -103,13 +103,17 @@ as.numeric(bear)
 
 r <- c(5, 2, 1, 8, 45)
 
-r
+r * 2
 
 is.na(r)
 
 is.numeric(r)
 
+class(r)
+
 # Changes in R Studio
+
+
 
 
 ```
